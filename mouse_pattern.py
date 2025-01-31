@@ -7,8 +7,8 @@ def draw_line(movements):
     x_vals, y_vals = zip(*movements)  # Unpack x and y coordinates
     
     plt.plot(x_vals, y_vals, marker='o', linestyle='-', color='b', markersize=8)
-    
-    # Annotate each point with its coordinates
+     
+    # Optional annotate each point with its coordinates
     #for (x, y) in movements:
     #    plt.text(x, y, f'({x},{y})', fontsize=12, ha='right', va='bottom', color='red')
     
@@ -25,7 +25,7 @@ def read_coordinates_from_json(file_path):
         data = json.load(file)
     return data["movements"]
 
-# Example usage
+# Use file name to create graph
 file_path = "mouse_movement_log_5.json"
 movements = read_coordinates_from_json(file_path)
 draw_line(movements)
